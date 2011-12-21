@@ -1,0 +1,7 @@
+rvm_install_on_use_flag=1
+rvm_gemset_create_on_use_flag=1
+rvm ruby-1.9.2@leboncouac
+if ! type bundle > /dev/null 2>&1
+then
+    gem install bundler
+fi
