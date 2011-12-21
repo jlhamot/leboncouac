@@ -2,11 +2,16 @@
 <p>It is now <%= @time %></p>
 </header>
 
-<div class="new_musician">
-<field></field>
-<button>Add</button>
-</div>
+<div id="new-musician"></div>
 
-<div class="list">
-Liste:
-</div>
+<div id="all-musicians"></div>
+
+<script type="text/javascript">
+    $(function() {
+        $('#new-musician').load('<%= new_musician_url %>');
+    });
+
+    $(function() {
+        $('#all-musicians').load('<%= musicians_url %>');
+    });
+</script>
