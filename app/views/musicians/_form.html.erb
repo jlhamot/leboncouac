@@ -23,3 +23,23 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<div id="recipient"></div>
+
+<script type="text/javascript">
+    $(function() {
+        $("#new_musician").submit(function() {
+            s = $(this).serialize();
+            $.ajax({
+                    type: "POST",
+                    data: s,
+                    url: $(this).attr("action"),
+                    success: function(retour)
+                    {
+                        $("#recipient").empty().append(retour);
+                    }
+                });
+            return false;
+        });
+    });
+</script>
