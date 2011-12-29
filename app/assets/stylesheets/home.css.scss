@@ -1,3 +1,35 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#onglets .onglet {
+     border:1px solid #000;
+     clear:left;
+     padding:5px;
+     zoom:1 /* ie */
+}
+#onglets ul {
+     border-right:1px solid #000;
+     float:left;
+     margin:0;
+     padding:0
+}
+#onglets li {
+     position:relative;
+     margin-bottom:-1px;
+     list-style-type:none;
+     padding:5px;
+     border-top:1px solid #000;
+     border-bottom:1px solid #000;
+     border-left:1px solid #000;
+     float:left
+}
+#onglets li.actif {
+     border-bottom-color:#FFF
+}
+#onglets li.actif a {
+     text-decoration:none
+}
+#onglets h3 {
+     margin-top:0
+}
