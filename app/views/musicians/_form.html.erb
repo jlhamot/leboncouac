@@ -37,6 +37,7 @@
                     success: function(retour)
                     {
                         $("#recipient").empty().append(retour);
+                        $('#all-musicians').load('<%= musicians_url %>');
                     }
                 });
             return false;
