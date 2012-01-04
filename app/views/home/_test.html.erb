@@ -1,62 +1,33 @@
-<p>It is now <%= @time %></p>
-
-<div id="test">
-    <p>Fade in, fade out</p>
-</div>
-
 <div id="onglets">
-     <ul>
-         <li><a href="#onglet_1">Lorem ipsum</a></li>
-         <li><a href="#onglet_2">Pan</a></li>
-         <li><a href="#onglet_3">Onglet 3</a></li>
-     </ul>
-     <div class="onglet" id="onglet_1">
-         <h3>Onglet 1</h3>
-         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-     </div>
-     <div class="onglet" id="onglet_2">
-         <h3>Onglet 2</h3>
-         <p>Portez ce vieux whisky au juge blond qui fume.</p>
-     </div>
-     <div class="onglet" id="onglet_3">
-         <h3>Onglet 3</h3>
-         <p>Voix ambigüe d'un cœur qui, au zéphyr, préfère les jattes de kiwis.</p>
-     </div>
+    <a role="button" class="onglet_1" href="#onglet_1">Accueil</a>
+    <a role="button" href="#onglet_2">Recherche</a>
+    <a role="button" href="#onglet_3">Inscription</a>
+    <div class="onglet" id="onglet_1">
+        <h3>Accueil</h3>
+        <p>leboncouac.fr<br>
+        Formez votre groupe de musique facilement !</p>
+    </div>
+    <div class="onglet" id="onglet_2">
+        <h3>Recherche</h3>
+        <p>Rechercher un musicien</p>
+    </div>
+    <div class="onglet" id="onglet_3">
+        <h3>Inscription</h3>
+        <p>S'inscrire en tant que musicien</p>
+    </div>
 </div>
-
-<script type="text/javascript">
-    $(function() {
-        $('#test').fadeOut("slow", myFadeIn);
-    });
-
-    function myFadeIn(){
-        $(this).fadeIn(2000, myFadeOut);
-    }
-
-    function myFadeOut(){
-        $(this).fadeOut(2000, myFadeIn);
-    }
-</script>
 
 <script type="text/javascript">
     $(function(){
         $("#onglets .onglet").not(":first").hide();
-        $("#onglets ul a:first").parent("li").addClass("actif");
-        $("#onglets ul a").click(
+        $("#onglets a:first").addClass("actif");
+        $("#onglets a").click(
             function(){
-                $("#onglets ul a").parent("li").removeClass("actif");
+                $("#onglets a").removeClass("actif");
                 $("#onglets .onglet").hide();
                 $(this.hash).show();
-                $(this).blur().parent("li").addClass("actif");
+                $(this).blur().addClass("actif");
                 return false;
-            }
-        );
-        $("#onglets ul a").hover(
-            function () {
-                $(this).blur().parent("li").addClass("hover");
-            },
-            function () {
-                $(this).blur().parent("li").removeClass("hover");
             }
         );
     });
