@@ -1,7 +1,7 @@
 <%= form_for(@musician) do |f| %>
   <% if @musician.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@musician.errors.count, "error") %> prohibited this musician from being saved:</h2>
+      <h2><%= pluralize(@musician.errors.count, "erreur") %> dans le formulaire :</h2>
 
       <ul>
       <% @musician.errors.full_messages.each do |msg| %>
@@ -12,19 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname %><br />
+    Prénom<br>
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br />
+    Nom<br>
     <%= f.text_field :lastname %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "S'inscrire" %>
   </div>
 <% end %>
-
-<div id="recipient"></div>
 
 <script type="text/javascript">
     $(function() {
@@ -36,7 +35,7 @@
                     url: $(this).attr("action"),
                     success: function(retour)
                     {
-                        $("#recipient").empty().append(retour);
+                        $('#new-musician').empty().append(retour);
                         $('#all-musicians').load('<%= musicians_url %>');
                     }
                 });

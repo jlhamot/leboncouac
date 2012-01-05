@@ -44,7 +44,7 @@ class MusiciansController < ApplicationController
 
     respond_to do |format|
       if @musician.save
-        format.html { redirect_to @musician, notice: 'Musician was successfully created.' }
+        format.html { redirect_to @musician, notice: t(:Inscription_complete) }
         format.json { render json: @musician, status: :created, location: @musician }
       else
         format.html { render action: "new" }

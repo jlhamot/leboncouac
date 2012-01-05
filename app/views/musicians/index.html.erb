@@ -1,21 +1,23 @@
-<h3>Listing musicians</h3>
+<h3>Liste des musiciens</h3>
+
+<p>Liste des musiciens cherchant à jouer dans un groupe. Contactez les !</p>
 
 <table>
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <!--<th></th>
     <th></th>
-    <th></th>
-    <th></th>
+    <th></th>-->
   </tr>
 
 <% @musicians.each do |musician| %>
   <tr>
     <td><%= musician.firstname %></td>
     <td><%= musician.lastname %></td>
-    <td><%= link_to 'Show', musician %></td>
+    <!--<td><%= link_to 'Show', musician %></td>
     <td><%= link_to 'Edit', edit_musician_path(musician) %></td>
-    <td><%= link_to 'Destroy', musician, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', musician, confirm: 'Are you sure?', method: :delete %></td>-->
   </tr>
 <% end %>
 </table>
