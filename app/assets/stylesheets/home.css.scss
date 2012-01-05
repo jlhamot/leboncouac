@@ -2,35 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#bandeau {
+    position:absolute;
+    height:60px;
+    width: 100%;
+    background-color:#2B2B2B;
+}
+
+#main {
+    align: center;
+    margin:0 auto;
+    width: 800px;
+}
+
+#entete {
+    position:absolute;
+    width: 800px;
+    margin-bottom:-30px;
+    background-color:#2B2B2B;
+}
+
+#onglets {
+    position:absolute;
+    top: 32px;
+    width: 800px;
+}
+
 #onglets .onglet {
-     width:600px;
-     border:1px solid #000;
-     clear:left;
-     padding:10px;
-     zoom:1; /* ie */
-     background:#F6F6F2;
+    clear:left;
+    padding:10px;
+    zoom:1; /* ie */
+    background-color:#F6F6F2;
 }
 
 #onglets a.button {
      width:100px;
      position:relative;
-     margin-bottom:-1px;
      margin-right:7px;
      padding:5px;
-     border-top:1px solid #000;
-     border-bottom:1px solid #000;
-     border-left:1px solid #000;
-     border-right:1px solid #000;
      border-radius:5px 5px 0px 0px;
      float:left;
      text-align: center;
      text-decoration: none;
      color: #454545;
-     background:#999;
+     background-color:#999;
 }
 
 #onglets a.onglet_1 {
-     margin-left:200px;
+     margin-left:350px;
 }
 
 #onglets a:hover {
@@ -38,10 +58,9 @@
 }
 
 #onglets a.actif {
-    border-bottom-color:#FFF;
-    background:#F6F6F2;
+    background-color:#F6F6F2;
 }
 
 #onglets h3 {
-    margin-top:0;
+    margin-top:10;
 }
