@@ -9,4 +9,7 @@ class Musician < ActiveRecord::Base
       self.uuid = SecureRandom.urlsafe_base64()
     end
     
+    def is_active
+      active
+    end
 end

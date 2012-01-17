@@ -2,7 +2,7 @@ class MusiciansController < ApplicationController
   # GET /musicians
   # GET /musicians.json
   def index
-    @musicians = Musician.all
+    @musicians = Musician.all.find_all { |musician| musician.is_active }
 
     respond_to do |format|
       format.html # index.html.erb
