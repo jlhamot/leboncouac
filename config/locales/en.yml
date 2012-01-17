@@ -10,6 +10,7 @@ en:
         musician:
             firstname: "Prénom"
             lastname: "Nom"
+            email: "e-mail"
     errors:
       messages:
         # Default messages: complete sentences
