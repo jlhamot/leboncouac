@@ -81,4 +81,21 @@ class MusiciansController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  # GET /musicians/?:uuid
+  def activation
+    @musician = Musician.all.find { |musician| musician.uuid == params[:uuid] }
+    @musician.set_active
+
+    respond_to do |format|
+       if @musician.save
+         format.html { redirect_to home_index_url }
+         format.json { head :ok }
+       else
+         format.html { render action: "activation" }
+         format.json { render json: @musician.errors, status: :unprocessable_entity }
+       end
+    end
+    
+  end
 end

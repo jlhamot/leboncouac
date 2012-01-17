@@ -2,5 +2,7 @@ Salut <%= @musician.firstname %>,
 
 Merci pour ton inscription!
 
+<%= link_to("activer", activation_musicians_url(uuid: @musician.uuid)) %>
+
 L'équipe de leboncouac
 

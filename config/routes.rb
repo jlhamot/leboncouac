@@ -1,5 +1,7 @@
 Leboncouac::Application.routes.draw do
-  resources :musicians
+  resources :musicians  do
+    get :activation, on: :collection
+  end
 
   get "home/index"
 

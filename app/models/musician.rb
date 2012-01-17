@@ -12,4 +12,8 @@ class Musician < ActiveRecord::Base
     def is_active
       active
     end
+    
+    def set_active
+      self.active = true
+    end
 end
