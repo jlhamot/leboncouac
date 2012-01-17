@@ -57,4 +57,14 @@ Leboncouac::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = { 
+    address: "smtp.free.fr",
+    port: 25,
+    domain: "leboncouac.fr", authentication: "plain",
+    user_name: "leboncouac", password: "", enable_starttls_auto: true
+  }
+  
 end

@@ -41,9 +41,10 @@ class MusiciansController < ApplicationController
   # POST /musicians.json
   def create
     @musician = Musician.new(params[:musician])
-
+    
     respond_to do |format|
       if @musician.save
+        InscriptionMailer.subscribeDemand(@musician).deliver
         format.html { redirect_to @musician, notice: t(:Inscription_complete) }
         format.json { render json: @musician, status: :created, location: @musician }
       else
