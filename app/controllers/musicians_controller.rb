@@ -44,9 +44,14 @@ class MusiciansController < ApplicationController
     
     respond_to do |format|
       if @musician.save
-        InscriptionMailer.subscribeDemand(@musician).deliver
-        format.html { redirect_to @musician, notice: t(:Inscription_complete) }
-        format.json { render json: @musician, status: :created, location: @musician }
+        begin
+          InscriptionMailer.subscribeDemand(@musician).deliver
+          format.html { redirect_to @musician, notice: t(:Inscription_complete) }
+          format.json { render json: @musician, status: :created, location: @musician }
+        rescue
+          format.html { render action: "new" }
+          format.json { render json: @musician.errors, status: :unprocessable_entity }          
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @musician.errors, status: :unprocessable_entity }

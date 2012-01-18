@@ -7,3 +7,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$.ajaxSetup({
+    beforeSend:function(){
+   		$('body').css('cursor', 'wait');
+ 	},
+    complete:function(){
+        $('body').css('cursor', 'auto');
+    }
+});

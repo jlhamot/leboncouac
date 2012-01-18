@@ -1,5 +1,5 @@
 class InscriptionMailer < ActionMailer::Base
-  default from: "no_reply@leboncouac.fr"
+  default from: "no-reply@leboncouac.fr"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

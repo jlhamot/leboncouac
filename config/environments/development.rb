@@ -29,14 +29,15 @@ Leboncouac::Application.configure do
   config.assets.debug = true
   
   # mail
+  #config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { :host => 'localhost' }
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = { 
     address: "smtp.free.fr",
     port: 25,
-    domain: "leboncouac.fr", authentication: "plain",
-    user_name: "leboncouac", password: "", enable_starttls_auto: true
+    domain: "free.fr", authentication: "plain",
+    user_name: "leboncouac", password: "lbc0u@c", enable_starttls_auto: true
   }
   
 end
