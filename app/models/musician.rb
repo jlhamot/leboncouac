@@ -1,10 +1,10 @@
 require 'SecureRandom'
 
 class Musician < ActiveRecord::Base
+    has_and_belongs_to_many :instruments
+  
     validates_presence_of :firstname, :lastname, :email
     before_create :generate_uuid
-    
-    
     
     
     def generate_uuid()

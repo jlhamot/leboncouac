@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Instrument.create(:name => "Chant")
+Instrument.create(:name => "Piano")
+Instrument.create(:name => "Saxophone", :tonality => "Bb")

@@ -25,6 +25,7 @@ class MusiciansController < ApplicationController
   # GET /musicians/new.json
   def new
     @musician = Musician.new
+    @instruments = Instrument.find(:all, :order => "name")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class MusiciansController < ApplicationController
   # GET /musicians/1/edit
   def edit
     @musician = Musician.find(params[:id])
+    @instruments = Instrument.find(:all, :order => "name")
   end
 
   # POST /musicians

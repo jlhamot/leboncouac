@@ -6,8 +6,8 @@
   <tr>
     <th>Prénom</th>
     <th>Nom</th>
-    <!--<th></th>
-    <th></th>
+    <th>Instruments</th>
+    <!--th></th>
     <th></th>-->
   </tr>
 
@@ -15,6 +15,7 @@
   <tr>
     <td><%= musician.firstname %></td>
     <td><%= musician.lastname %></td>
+ 	<td><%= musician.instruments.map { |instrument| instrument.name }.join(", ") %></td>
     <!--<td><%= link_to 'Show', musician %></td>
     <td><%= link_to 'Edit', edit_musician_path(musician) %></td>
     <td><%= link_to 'Destroy', musician, confirm: 'Are you sure?', method: :delete %></td>-->

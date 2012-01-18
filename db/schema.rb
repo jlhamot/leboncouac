@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120117150306) do
+ActiveRecord::Schema.define(:version => 20120118161239) do
+
+  create_table "instruments", :force => true do |t|
+    t.string   "name"
+    t.string   "tonality"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instruments_musicians", :id => false, :force => true do |t|
+    t.integer "instrument_id"
+    t.integer "musician_id"
+  end
 
   create_table "musicians", :force => true do |t|
     t.string   "firstname"
