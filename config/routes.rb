@@ -1,4 +1,6 @@
 Leboncouac::Application.routes.draw do
+  resources :instruments
+
   resources :musicians  do
     get :activation, on: :collection
   end

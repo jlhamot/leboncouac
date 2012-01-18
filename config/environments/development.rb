@@ -35,7 +35,7 @@ Leboncouac::Application.configure do
   
   config.action_mailer.smtp_settings = { 
     address: "smtp.free.fr",
-    port: 25,
+    port: 587,
     domain: "free.fr", authentication: "plain",
     user_name: "leboncouac", password: "lbc0u@c", enable_starttls_auto: true
   }
