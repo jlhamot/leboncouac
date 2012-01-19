@@ -43,17 +43,13 @@ class MusiciansController < ApplicationController
   # POST /musicians.json
   def create
     @musician = Musician.new(params[:musician])
+    @instruments = Instrument.find(:all, :order => "name")
     
     respond_to do |format|
       if @musician.save
-        begin
-          InscriptionMailer.subscribeDemand(@musician).deliver
-          format.html { redirect_to @musician, notice: t(:Inscription_complete) }
-          format.json { render json: @musician, status: :created, location: @musician }
-        rescue
-          format.html { render action: "new" }
-          format.json { render json: @musician.errors, status: :unprocessable_entity }          
-        end
+        InscriptionMailer.subscribeDemand(@musician).deliver
+        format.html { redirect_to @musician, notice: t(:Inscription_complete) }
+        format.json { render json: @musician, status: :created, location: @musician }
       else
         format.html { render action: "new" }
         format.json { render json: @musician.errors, status: :unprocessable_entity }

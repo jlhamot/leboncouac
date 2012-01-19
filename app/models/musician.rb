@@ -110,7 +110,6 @@ class Musician < ActiveRecord::Base
     before_create :generate_uuid
     has_and_belongs_to_many :instruments
     
-    
     def generate_uuid()
       self.uuid = SecureRandom.urlsafe_base64()
     end
