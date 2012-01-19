@@ -99,6 +99,15 @@ class MusiciansController < ApplicationController
          format.json { render json: @musician.errors, status: :unprocessable_entity }
        end
     end
+  end
+  
+  def send_message
+    @musician = Musician.find(params[:id])
     
+    respond_to do |format|
+         format.html { redirect_to home_index_url }
+         format.json { head :ok }
+      end
+    end
   end
 end

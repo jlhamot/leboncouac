@@ -3,6 +3,7 @@ Leboncouac::Application.routes.draw do
 
   resources :musicians  do
     get :activation, on: :collection
+    put :send_message, on: :member
   end
 
   get "home/index"
