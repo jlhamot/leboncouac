@@ -15,19 +15,30 @@
     Prénom<br>
     <%= f.text_field :firstname %>
   </div>
+
   <div class="field">
     Nom<br>
     <%= f.text_field :lastname %>
   </div>
 
-  <div class="field">
-    Email<br>
-    <%= f.text_field :email %>
-  </div>
-
  <div class="field">
 	Instruments :<br />
   	<%= collection_select(:musician, :instrument_ids, @instruments, :id, :name, {:prompt => false}, { :multiple => true }) %>
+  </div>
+
+ <div class="field">
+	Département :<br />
+  	<%= select(:musician, :department, Musician::DEPARTMENTS, {:prompt => "Sélectionner un département"}) %>
+  </div>
+  
+  <div class="field">
+    Ville<br>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    Email<br>
+    <%= f.text_field :email %>
   </div>
 
   <div class="actions">

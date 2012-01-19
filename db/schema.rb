@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118161239) do
+ActiveRecord::Schema.define(:version => 20120119090725) do
 
   create_table "instruments", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20120118161239) do
     t.string   "email"
     t.string   "uuid"
     t.boolean  "active",     :default => false
+    t.string   "department"
+    t.string   "city"
   end
 
 end

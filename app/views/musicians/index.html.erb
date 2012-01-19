@@ -7,8 +7,8 @@
     <th>Prénom</th>
     <th>Nom</th>
     <th>Instruments</th>
-    <!--th></th>
-    <th></th>-->
+    <th>Département</th>
+    <th>Ville</th>
   </tr>
 
 <% @musicians.each do |musician| %>
@@ -16,6 +16,9 @@
     <td><%= musician.firstname %></td>
     <td><%= musician.lastname %></td>
  	<td><%= musician.instruments.map { |instrument| instrument.name }.join(", ") %></td>
+    <td><%= musician.department %></td>
+    <td><%= musician.city %></td>
+
     <!--<td><%= link_to 'Show', musician %></td>
     <td><%= link_to 'Edit', edit_musician_path(musician) %></td>
     <td><%= link_to 'Destroy', musician, confirm: 'Are you sure?', method: :delete %></td>-->
