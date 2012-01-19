@@ -1,0 +1,12 @@
+<html>
+<body>
+Bonjour <%= @musician.name %>,
+<br>
+<br>Merci de votre inscription!
+<br>Pour valider votre demande, veuillez cliquer sur le lien ce dessous :
+<br><%= link_to("activer", activation_musicians_url(uuid: @musician.uuid)) %>
+<br>
+<br>A bientôt,
+<br><a href="http://www.leboncouac.fr">leboncouac.fr</a>
+</body>
+</html>

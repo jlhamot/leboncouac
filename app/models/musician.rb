@@ -106,7 +106,7 @@ class Musician < ActiveRecord::Base
       "974 La Réunion",
       "976 Mayotte"]
     
-    validates_presence_of :firstname, :lastname, :email
+    validates_presence_of :name, :email
     before_create :generate_uuid
     has_and_belongs_to_many :instruments
     

@@ -4,7 +4,6 @@
 
 <table>
   <tr>
-    <th>Prénom</th>
     <th>Nom</th>
     <th>Instruments</th>
     <th>Département</th>
@@ -13,8 +12,7 @@
 
 <% @musicians.each do |musician| %>
   <tr>
-    <td><%= musician.firstname %></td>
-    <td><%= musician.lastname %></td>
+    <td><%= musician.name %></td>
  	<td><%= musician.instruments.map { |instrument| instrument.name }.join(", ") %></td>
     <td><%= musician.department %></td>
     <td><%= musician.city %></td>

@@ -12,33 +12,29 @@
   <% end %>
 
   <div class="field">
-    Prénom<br>
-    <%= f.text_field :firstname %>
-  </div>
-
-  <div class="field">
-    Nom<br>
-    <%= f.text_field :lastname %>
+    Nom<br />
+    <%= f.text_field :name %>
   </div>
 
  <div class="field">
-	Instruments :<br />
+	Instruments<br />
   	<%= collection_select(:musician, :instrument_ids, @instruments, :id, :name, {:prompt => false}, { :multiple => true }) %>
   </div>
 
  <div class="field">
-	Département :<br />
+	Département<br />
   	<%= select(:musician, :department, Musician::DEPARTMENTS, {:prompt => "Sélectionner un département"}) %>
   </div>
   
   <div class="field">
-    Ville<br>
+    Ville<br />
     <%= f.text_field :city %>
   </div>
 
   <div class="field">
-    Email<br>
+    Email<br />
     <%= f.text_field :email %>
+	<br />Afin de vous protéger du spam, votre email ne sera pas visible dans l'annonce. Les utilisateurs pourront vous contacter via un formulaire.
   </div>
 
   <div class="actions">

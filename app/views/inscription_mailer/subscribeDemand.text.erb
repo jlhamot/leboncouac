@@ -1,8 +1,7 @@
-Salut <%= @musician.firstname %>,
+Bonjour <%= @musician.name %>,
 
-Merci pour ton inscription!
+Merci de votre inscription!
+Pour valider votre demande, veuillez cliquer sur le lien ce dessous :
+<%= activation_musicians_url(uuid: @musician.uuid) %>
 
-<%= link_to("activer", activation_musicians_url(uuid: @musician.uuid)) %>
-
-L'équipe de leboncouac
-
+leboncouac.fr
