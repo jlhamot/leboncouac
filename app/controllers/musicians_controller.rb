@@ -47,7 +47,7 @@ class MusiciansController < ApplicationController
     
     respond_to do |format|
       if @musician.save
-        InscriptionMailer.subscribeDemand(@musician).deliver
+        UserMailer.subscribeDemand(@musician).deliver
         format.html { redirect_to @musician, notice: t(:Inscription_complete) }
         format.json { render json: @musician, status: :created, location: @musician }
       else
@@ -103,11 +103,15 @@ class MusiciansController < ApplicationController
   
   def send_message
     @musician = Musician.find(params[:id])
+    name = params[:name]
+    email = params[:email]
+    phone = params[:phone]
+    message = params[:message]
+    UserMailer.sendMessage(@musician, name, email, phone, message).deliver
     
     respond_to do |format|
          format.html { redirect_to home_index_url }
          format.json { head :ok }
-      end
     end
   end
 end

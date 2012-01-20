@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class InscriptionMailerTest < ActionMailer::TestCase
+class UserMailerTest < ActionMailer::TestCase
   test "subscribeDemand" do
     musician = musicians(:one)
-    mail = InscriptionMailer.subscribeDemand(musician)
+    mail = UserMailer.subscribeDemand(musician)
     assert_equal "Confirmation de votre inscription sur leboncouac.fr", mail.subject
     assert_equal [musician.email], mail.to
     assert_equal ["no-reply@leboncouac.fr"], mail.from
-    assert_match "Merci pour ton inscription!", mail.body.encoded
+    assert_match "Merci de votre inscription!", mail.body.encoded
   end
 
 end
