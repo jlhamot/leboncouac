@@ -18,12 +18,12 @@
 
  <div class="field">
 	Instruments<br />
-  	<%= collection_select(:musician, :instrument_ids, @instruments, :id, :name, {:prompt => false}, { :multiple => true, :class => 'text ui-widget-content ui-corner-all'}) %>
+  	<%= collection_select(:musician, :instrument_ids, @instruments, :id, :name, {:prompt => false}, { :multiple => true, :class => 'ui-widget-content ui-corner-all'}) %>
   </div>
 
  <div class="field">
 	Département<br />
-  	<%= select(:musician, :department, Musician::DEPARTMENTS, {:prompt => "Sélectionner un département"}, {:class => 'text ui-widget-content ui-corner-all'}) %>
+  	<%= select(:musician, :department, Musician::DEPARTMENTS, {:prompt => "Sélectionner un département"}, {:class => 'ui-widget-content ui-corner-all'}) %>
   </div>
   
   <div class="field">
