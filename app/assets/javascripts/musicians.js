@@ -10,20 +10,20 @@ $(document).ready(function() {
 				"Envoyer": function() {
 					$.ajax({
 		            	type: "PUT",
-						data: { name: $("#name").val(), 
-								email: $("#email").val(), 
-								phone: $("#phone").val(), 
+						data: { name: $("#name").val(),
+								email: $("#email").val(),
+								phone: $("#phone").val(),
 								message: $("#message").val()
 						},
 						url: musician_contact_url ,
 						dataType: "json",
 						complete: function() {
-							$("#name").val(""); 
-							$("#email").val(""); 
-							$("#phone").val(""); 
+							$("#name").val("");
+							$("#email").val("");
+							$("#phone").val("");
 							$("#message").val("");
 						}
-		            });					
+		            });
 					$(this).dialog("close");
 				},
 				"Annuler": function() {
