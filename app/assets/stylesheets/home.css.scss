@@ -10,6 +10,20 @@
     background-color:#342612;
 }
 
+#publicite {
+    position:absolute;
+    align: center;
+    height:90px;
+    width: 728px;
+    background-color:#342612;
+    color:white;
+    bottom: 10px;
+}
+
+#publicite:hover {
+    cursor: pointer;
+}
+
 #main {
     align: center;
     margin:0 auto;
