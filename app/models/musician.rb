@@ -1,5 +1,5 @@
 # encoding: utf-8
-require 'SecureRandom'
+require 'securerandom'
 
 class Musician < ActiveRecord::Base
   
