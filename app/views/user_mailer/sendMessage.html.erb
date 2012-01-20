@@ -6,7 +6,9 @@ Bonjour <%= @musician.name %>,
 <br>Expéditeur: <%= @sender_name %>
 <br>Téléphone: <%= @sender_phone %>
 <br>Email: <%= @sender_email %>
-<br>Message: <%= @sender_message %>
+<br>Message:
+<br><%= simple_format @sender_message %>
+<br>
 <br>A bientôt,
 <br><a href="http://www.leboncouac.fr">leboncouac.fr</a>
 </body>

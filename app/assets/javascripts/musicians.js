@@ -4,8 +4,8 @@ $(document).ready(function() {
 		
 		$("#dialog-contact").dialog({
 			autoOpen: false,
-			height: 300,
-			width: 350,
+			height: 500,
+			width: 500,
 			modal: true,
 			buttons: {
 				"Envoyer": function() {
