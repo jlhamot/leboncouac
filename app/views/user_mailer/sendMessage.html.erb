@@ -2,10 +2,11 @@
 <body>
 Bonjour <%= @musician.name %>,
 <br>
-<br>Vous avez reçu un message sur leboncouac.fr!
+<br>Vous avez reçu un message sur leboncouac.fr !
+<br>
 <br>Expéditeur: <%= @sender_name %>
 <br>Téléphone: <%= @sender_phone %>
-<br>Email: <%= @sender_email %>
+<br>Email: <%= mail_to(@sender_email) %>
 <br>Message:
 <br><%= simple_format @sender_message %>
 <br>

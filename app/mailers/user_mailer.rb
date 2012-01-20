@@ -19,6 +19,6 @@ class UserMailer < ActionMailer::Base
     @sender_phone = phone
     @sender_message = message
     
-    mail to: @musician.email, subject: "Quelqu'un souhaite vous contacter"
+    mail to: @musician.email, subject: "[leboncouac.fr] Quelqu'un souhaite vous contacter"
   end
 end
