@@ -1,5 +1,4 @@
-
-$(document).ready(function() {	
+$(document).ready(function() {
 		var musician_contact_url;
 		
 		$("#dialog-contact").dialog({

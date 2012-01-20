@@ -17,3 +17,5 @@ $.ajaxSetup({
         $('body').css('cursor', 'auto');
     }
 });
+
+$(".inscription_button").button()

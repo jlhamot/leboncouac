@@ -12,33 +12,33 @@
   <% end %>
 
   <div class="field">
-    Nom<br />
-    <%= f.text_field :name %>
+    <label>Nom</label>
+    <%= f.text_field :name, {:class => 'text ui-widget-content ui-corner-all'} %>
   </div>
 
  <div class="field">
 	Instruments<br />
-  	<%= collection_select(:musician, :instrument_ids, @instruments, :id, :name, {:prompt => false}, { :multiple => true }) %>
+  	<%= collection_select(:musician, :instrument_ids, @instruments, :id, :name, {:prompt => false}, { :multiple => true, :class => 'text ui-widget-content ui-corner-all'}) %>
   </div>
 
  <div class="field">
 	Département<br />
-  	<%= select(:musician, :department, Musician::DEPARTMENTS, {:prompt => "Sélectionner un département"}) %>
+  	<%= select(:musician, :department, Musician::DEPARTMENTS, {:prompt => "Sélectionner un département"}, {:class => 'text ui-widget-content ui-corner-all'}) %>
   </div>
   
   <div class="field">
     Ville<br />
-    <%= f.text_field :city %>
+    <%= f.text_field :city, {:class => 'text ui-widget-content ui-corner-all'} %>
   </div>
 
   <div class="field">
     Email<br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, {:class => 'text ui-widget-content ui-corner-all'} %>
 	<br />Afin de vous protéger du spam, votre email ne sera pas visible dans l'annonce. Les utilisateurs pourront vous contacter via un formulaire.
   </div>
 
   <div class="actions">
-    <%= f.submit "S'inscrire" %>
+    <%= f.submit "S'inscrire", {:class => 'inscription_button'} %>
   </div>
 <% end %>
 
