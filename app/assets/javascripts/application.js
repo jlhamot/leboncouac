@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jquery.tablesorter.min.js
 //= require_tree .
 
 $.ajaxSetup({
@@ -18,4 +19,14 @@ $.ajaxSetup({
     }
 });
 
-$(".inscription_button").button()
+$(".inscription_button").button();
+
+$("#musician_table").tablesorter({ 
+       headers: { 
+           4: { 
+               sorter: false 
+           } 
+        },
+		sortList: [[2,0], [3,0]]
+}); 	
+	

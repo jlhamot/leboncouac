@@ -2,7 +2,8 @@
 
 <p>Liste des musiciens cherchant à jouer dans un groupe. Contactez les !</p>
 
-<table>
+<table id="musician_table" class="tablesorter">
+  <thead> 
   <tr>
     <th>Nom</th>
     <th>Instruments</th>
@@ -10,7 +11,9 @@
     <th>Ville</th>
 	<th></th>
   </tr>
+  </thead> 
 
+  <tbody>
 <% @musicians.each do |musician| %>
   <tr>
     <td><%= musician.name %></td>
@@ -20,6 +23,7 @@
 	<td><button class="contact_musician" musician_contact_url=<%= send_message_musician_url(musician) %>>Contact</button></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <div id="dialog-contact" title="Contacter le musicien">
