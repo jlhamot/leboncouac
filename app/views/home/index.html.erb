@@ -4,10 +4,10 @@
     <div id="entete"><img src="<%= image_path 'leboncouac-beige-200.png' %>"/></div>
 
     <div id="onglets">
-        <a role="button" class="button onglet_1" href="#acceuil">Accueil</a>
+        <a role="button" class="button onglet_1" href="#accueil">Accueil</a>
         <a role="button" class="button" href="#all-musicians">Recherche</a>
         <a role="button" class="button" href="#new-musician">Inscription</a>
-        <div class="onglet" id="acceuil">
+        <div class="onglet" id="accueil">
             <h3>Accueil</h3>
             <p>Avec leboncouac.fr, formez votre groupe de musique facilement !</p>
             <br/>
@@ -17,14 +17,13 @@
             <h4>Vous faites partie d'un groupe et il vous manque un musicien ?</h4>
             <p>Faites une recherche dans la liste des musiciens, puis contactez-les !</p>
             <br/>
-            <br>Contact : <%= mail_to("contact@leboncouac.fr") %>
+            <br>Contact : <%= mail_to "contact@leboncouac.fr" %>
         </div>
         <div class="onglet" id="all-musicians"></div>
         <div class="onglet" id="new-musician"></div>
     </div>
 
     <div id="publicite">
-        <h4><blockquote>Publicité</blockquote></h4>
     </div>
 
 </div>
@@ -32,10 +31,10 @@
 <script type="text/javascript">
     $(function(){
         $("#onglets .onglet").not(":first").hide();
-        $("#onglets a:first").addClass("actif");
-        $("#onglets a").click(
+        $("#onglets .button:first").addClass("actif");
+        $("#onglets .button").click(
             function(){
-                $("#onglets a").removeClass("actif");
+                $("#onglets .button").removeClass("actif");
                 $("#onglets .onglet").hide();
                 $(this.hash).show();
                 $(this).blur().addClass("actif");
