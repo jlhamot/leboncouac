@@ -6,6 +6,7 @@ $(document).ready(function() {
 			height: 500,
 			width: 500,
 			modal: true,
+			title: "Contacter le musicien",
 			buttons: {
 				"Envoyer": function() {
 					$.ajax({
@@ -36,6 +37,7 @@ $(document).ready(function() {
 			.button()
 			.click(function() {
 				musician_contact_url = $(this).attr("musician_contact_url");
+				$("#ui-dialog-title-dialog-contact").html("Contacter " + $(this).attr("musician_contact_name"));
 				$("#dialog-contact").dialog("open");
 	});
 });
