@@ -23,10 +23,10 @@ $(".inscription_button").button();
 
 $("#musician_table").tablesorter({ 
        headers: { 
-           4: { 
+           6: { 
                sorter: false 
            } 
         },
-		sortList: [[2,0], [3,0]]
+		sortList: [[4,0], [5,0]]
 }); 	
 	

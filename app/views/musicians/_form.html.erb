@@ -4,8 +4,9 @@ Vous désirez être contacté par des groupes de musique à la recherche de musi
 <br>Votre annonce restera pendant 3 mois sur le site puis sera supprimée. Pendant cette période, vous pourrez la supprimer à tout moment.
 <br><br>
 </p>
+<div id="ok"></div>
 
-<%= form_for(@musician) do |f| %>
+<%= form_for(@musician, :remote => true, ) do |f| %>
   <% if @musician.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@musician.errors.count, "erreur") %> dans le formulaire :</h2>
@@ -28,6 +29,16 @@ Vous désirez être contacté par des groupes de musique à la recherche de musi
   	<%= collection_select(:musician, :instrument_ids, @instruments, :id, :name, {:prompt => false}, { :multiple => true, :class => 'ui-widget-content ui-corner-all'}) %>
   </div>
 
+  <div class="field">
+	Niveau<br />
+  	<%= select(:musician, :level, Musician::LEVELS, {:prompt => "Sélectionner votre niveau"}, {:class => 'ui-widget-content ui-corner-all'}) %>
+  </div>
+
+  <div class="field">
+    Styles joués<br />
+    <%= f.text_field :style, {:class => 'text ui-widget-content ui-corner-all'} %>
+  </div>
+
  <div class="field">
 	Département<br />
   	<%= select(:musician, :department, Musician::DEPARTMENTS, {:prompt => "Sélectionner un département"}, {:class => 'ui-widget-content ui-corner-all'}) %>
@@ -36,6 +47,11 @@ Vous désirez être contacté par des groupes de musique à la recherche de musi
   <div class="field">
     Ville<br />
     <%= f.text_field :city, {:class => 'text ui-widget-content ui-corner-all'} %>
+  </div>
+
+ <div class="field">
+    Ajouter des informations supplémentaires<br />
+    <div class="form_texarea_wrapper"><%= f.text_area :comment, {:class => 'text ui-widget-content ui-corner-all form_textarea', :rows => 10, :cols => 70} %></div>
   </div>
 
   <div class="field">

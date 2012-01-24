@@ -1,7 +1,7 @@
 <h3>Liste des musiciens</h3>
 
 <p>Liste des musiciens cherchant à jouer dans un groupe.
-<br>Faites une recherche dans la liste ci dessous (n'oubliez pas de la trier en fonction des critères qui sont important pour vous), puis contactez les via le formulaire (bouton 'Contact').
+<br>Faites une recherche dans la liste ci dessous (n'oubliez pas de la trier en fonction des critères qui sont importants pour vous), puis contactez les via le formulaire (bouton 'Contact').
 <br><br>
 </p>
 
@@ -10,6 +10,8 @@
   <tr>
     <th class="bordered">Nom</th>
     <th class="bordered">Instruments</th>
+    <th class="bordered">Niveau</th>
+    <th class="bordered">Styles</th>
     <th class="bordered">Département</th>
     <th class="bordered">Ville</th>
 	<th></th>
@@ -21,6 +23,8 @@
   <tr>
     <td class="bordered"><%= musician.name %></td>
  	<td class="bordered"><%= musician.instruments.map { |instrument| instrument.name }.join(", ") %></td>
+    <td class="bordered"><%= musician.level %></td>
+    <td class="bordered"><%= musician.style %></td>
     <td class="bordered"><%= musician.department %></td>
     <td class="bordered"><%= musician.city %></td>
 	<td><button class="contact_musician" musician_contact_name=<%= musician.name %> musician_contact_url=<%= send_message_musician_url(musician) %>>Contact</button></td>

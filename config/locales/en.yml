@@ -8,8 +8,7 @@ en:
         musician: "Musicien"
     attributes:
         musician:
-            firstname: "Prénom"
-            lastname: "Nom"
+            name: "Nom"
             email: "e-mail"
     errors:
       messages:

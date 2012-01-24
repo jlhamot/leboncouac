@@ -105,6 +105,12 @@ class Musician < ActiveRecord::Base
       "973 Guyanne",
       "974 La Réunion",
       "976 Mayotte"]
+      
+    LEVELS = [
+      "Débutant",
+       "Moyen",
+       "Confirmé",
+       "Professionnel"]
     
     validates_presence_of :name, :email
     before_create :generate_uuid

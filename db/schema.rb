@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119100349) do
+ActiveRecord::Schema.define(:version => 20120124092900) do
 
   create_table "instruments", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(:version => 20120119100349) do
     t.string   "department"
     t.string   "city"
     t.string   "name"
+    t.string   "level"
+    t.string   "style"
+    t.text     "comment"
   end
 
 end
