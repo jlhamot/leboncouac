@@ -68,16 +68,12 @@ Vous désirez être contacté par des groupes de musique à la recherche de musi
 <script type="text/javascript">
     $(function() {
         $("#new_musician").submit(function() {
-            s = $(this).serialize();
             $.ajax({
                     type: "POST",
                     data: s,
                     url: $(this).attr("action"),
                     success: function(retour)
                     {
-                        $('#new-musician').empty().append(retour);
-                        $('#all-musicians').load('<%= musicians_url %>');
-                    }
                 });
             return false;
         });
