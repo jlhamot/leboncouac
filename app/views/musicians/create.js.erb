@@ -1,0 +1,19 @@
+
+$('#musician_name').val('');
+$('#musician_instrument_ids').val('');
+$('#musician_level').empty();
+$('#musician_style').val('');
+$('#musician_department').empty();
+$('#musician_city').val('');
+$('#musician_comment').val('');
+$('#musician_email').val('');
+	
+$("#dialog-confirm").dialog({
+	modal: true,
+	buttons: {
+		Ok: function() {
+			$( this ).dialog("close");
+			$("#tab_all_musicians").trigger('click');
+		}
+	}
+});

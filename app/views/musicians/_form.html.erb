@@ -65,17 +65,52 @@ Vous désirez être contacté par des groupes de musique à la recherche de musi
   </div>
 <% end %>
 
+<div id="dialog-confirm" title="Inscription complète!">
+	<p>
+		<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+		Votre demande d'inscription est prise en compte. Vous allez recevoir un email pour la valider.
+	</p>
+</div>
+
+
 <script type="text/javascript">
     $(function() {
         $("#new_musician").submit(function() {
+	        s = $(this).serialize();
             $.ajax({
                     type: "POST",
                     data: s,
                     url: $(this).attr("action"),
                     success: function(retour)
                     {
+						$('#musician_name').val('');
+							$('#musician_instrument_ids').val('');
+							$('#musician_level').empty();
+							$('#musician_style').val('');
+							$('#musician_department').empty();
+							$('#musician_city').val('');
+							$('#musician_comment').val('');
+							$('#musician_email').val('');
+							$("#dialog-confirm").dialog("open");						
+	                }
                 });
             return false;
         });
     });
+</script>
+
+<script>
+	$(function() {
+		$("#dialog-confirm").dialog({
+			autoOpen: false,
+			modal: true,
+			buttons: {
+				Ok: function() {
+					$(this).dialog("close");
+					$("#tab_all_musicians").click();
+					$("body").scrollTop(0);
+				}
+			}
+		});	
+	});
 </script>
