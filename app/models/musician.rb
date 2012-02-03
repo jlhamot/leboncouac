@@ -112,7 +112,7 @@ class Musician < ActiveRecord::Base
        "Confirmé",
        "Professionnel"]
     
-    validates_presence_of :name, :email
+    #validates_presence_of :name, :email
     before_create :generate_uuid
     has_and_belongs_to_many :instruments
     

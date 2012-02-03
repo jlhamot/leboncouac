@@ -1,4 +1,17 @@
 $(document).ready(function() {
+	$("#onglets .onglet").not(":first").hide();
+    $("#onglets .button:first").addClass("actif");
+    $("#onglets .button").click(
+        function(){
+            $("#onglets .button").removeClass("actif");
+            $("#onglets .onglet").hide();
+            $(this.hash).show();
+            $(this).blur().addClass("actif");
+            return false;
+        }
+    );
+
+	
 		var musician_contact_url;
 		
 		$("#dialog-contact").dialog({
@@ -39,5 +52,8 @@ $(document).ready(function() {
 				musician_contact_url = $(this).attr("musician_contact_url");
 				$("#ui-dialog-title-dialog-contact").html("Contacter " + $(this).attr("musician_contact_name"));
 				$("#dialog-contact").dialog("open");
-	});
+		});
+		
+		$("#dialog-confirm").hide();
+
 });

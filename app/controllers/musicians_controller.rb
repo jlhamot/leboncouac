@@ -3,6 +3,8 @@ class MusiciansController < ApplicationController
   # GET /musicians.json
   def index
     @musicians = Musician.all.find_all { |musician| musician.is_active }
+     @musician = Musician.new
+      @instruments = Instrument.find(:all, :order => "name")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,9 +50,12 @@ class MusiciansController < ApplicationController
     respond_to do |format|
       if @musician.save
         UserMailer.subscribeDemand(@musician).deliver
+        format.js
         format.html { redirect_to @musician, notice: t(:Inscription_complete) }
         format.json { render json: @musician, status: :created, location: @musician }
+        @musician = Musician.new
       else
+        format.js { render js: @musician.errors, :status => :unprocessable_entity }
         format.html { render action: "new" }
         format.json { render json: @musician.errors, status: :unprocessable_entity }
       end
@@ -92,7 +97,7 @@ class MusiciansController < ApplicationController
 
     respond_to do |format|
        if @musician.save
-         format.html { redirect_to home_index_url }
+         format.html { redirect_to musicians_url }
          format.json { head :ok }
        else
          format.html { render action: "activation" }
@@ -110,7 +115,7 @@ class MusiciansController < ApplicationController
     UserMailer.sendMessage(@musician, name, email, phone, message).deliver
     
     respond_to do |format|
-         format.html { redirect_to home_index_url }
+         format.html { redirect_to musicians_url }
          format.json { head :ok }
     end
   end

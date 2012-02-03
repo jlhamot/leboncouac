@@ -19,14 +19,15 @@ $.ajaxSetup({
     }
 });
 
-$(".inscription_button").button();
+$(document).ready(function(){
+	$(".inscription_button").button();
 
-$("#musician_table").tablesorter({ 
+	$("#musician_table").tablesorter({ 
        headers: { 
            6: { 
                sorter: false 
            } 
         },
 		sortList: [[4,0], [5,0]]
-}); 	
-	
+	}); 	
+});

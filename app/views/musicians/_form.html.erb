@@ -4,20 +4,11 @@ Vous désirez être contacté par des groupes de musique à la recherche de musi
 <br>Votre annonce restera pendant 3 mois sur le site puis sera supprimée. Pendant cette période, vous pourrez la supprimer à tout moment.
 <br><br>
 </p>
-<div id="ok"></div>
 
-<%= form_for(@musician, :remote => true, ) do |f| %>
-  <% if @musician.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@musician.errors.count, "erreur") %> dans le formulaire :</h2>
+<%= form_for(@musician, :remote => true, :id => "musician_form") do |f| %>
 
-      <ul>
-      <% @musician.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="errors"></div>
+  
 
   <div class="field">
     <label>Nom</label>
@@ -72,45 +63,3 @@ Vous désirez être contacté par des groupes de musique à la recherche de musi
 	</p>
 </div>
 
-
-<script type="text/javascript">
-    $(function() {
-        $("#new_musician").submit(function() {
-	        s = $(this).serialize();
-            $.ajax({
-                    type: "POST",
-                    data: s,
-                    url: $(this).attr("action"),
-                    success: function(retour)
-                    {
-						$('#musician_name').val('');
-							$('#musician_instrument_ids').val('');
-							$('#musician_level').val('')
-							$('#musician_style').val('');
-							$('#musician_department').val('');
-							$('#musician_city').val('');
-							$('#musician_comment').val('');
-							$('#musician_email').val('');
-							$("#dialog-confirm").dialog("open");						
-	                }
-                });
-            return false;
-        });
-    });
-</script>
-
-<script>
-	$(function() {
-		$("#dialog-confirm").dialog({
-			autoOpen: false,
-			modal: true,
-			buttons: {
-				Ok: function() {
-					$(this).dialog("close");
-					$("#tab_all_musicians").click();
-					$("body").scrollTop(0);
-				}
-			}
-		});	
-	});
-</script>

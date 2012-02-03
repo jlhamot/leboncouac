@@ -1,19 +1,47 @@
 
+
+var el = $('#musician_form');
+
+<% if @musician.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @musician.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript( error ) %></li>');
+  <% end %>
+
+  // Display errors on form
+  el.find('.errors').html(errors);
+
+<% else %>
+
+
 $('#musician_name').val('');
 $('#musician_instrument_ids').val('');
-$('#musician_level').empty();
+$('#musician_level').val('');
 $('#musician_style').val('');
-$('#musician_department').empty();
+$('#musician_department').val('');
 $('#musician_city').val('');
 $('#musician_comment').val('');
 $('#musician_email').val('');
 	
 $("#dialog-confirm").dialog({
+	autoOpen: false,
 	modal: true,
 	buttons: {
 		Ok: function() {
 			$( this ).dialog("close");
+			$("#dialog-confirm").hide();
 			$("#tab_all_musicians").trigger('click');
+			$("body").scrollTop(0);
 		}
 	}
 });
+
+
+$("#dialog-confirm").show();
+$("#dialog-confirm").dialog("open");						
+ 
+
+<% end %>

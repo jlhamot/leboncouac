@@ -30,8 +30,67 @@
             <br>Contact : <%= mail_to "contact@leboncouac.fr" %>
             </p>
         </div>
-        <div class="onglet" id="all-musicians"></div>
-        <div class="onglet" id="new-musician"></div>
+        <div class="onglet" id="all-musicians">
+        	<h3>Liste des musiciens</h3>
+
+			<p>Liste des musiciens cherchant à jouer dans un groupe.
+			<br>Faites une recherche dans la liste ci dessous (n'oubliez pas de la trier en fonction des critères qui sont importants pour vous), puis contactez les via le formulaire (bouton 'Contact').
+			<br><br>
+			</p>
+
+			<table id="musician_table" class="tablesorter">
+			  <thead> 
+			  <tr>
+			    <th class="bordered">Nom</th>
+			    <th class="bordered">Instruments</th>
+			    <th class="bordered">Niveau</th>
+			    <th class="bordered">Styles</th>
+			    <th class="bordered">Département</th>
+			    <th class="bordered">Ville</th>
+				<th></th>
+			  </tr>
+			  </thead> 
+
+			  <tbody>
+			<% @musicians.each do |musician| %>
+			  <tr>
+			    <td class="bordered"><%= musician.name %></td>
+			 	<td class="bordered"><%= musician.instruments.map { |instrument| instrument.name }.join(", ") %></td>
+			    <td class="bordered"><%= musician.level %></td>
+			    <td class="bordered"><%= musician.style %></td>
+			    <td class="bordered"><%= musician.department %></td>
+			    <td class="bordered"><%= musician.city %></td>
+				<td><button class="contact_musician" musician_contact_name=<%= musician.name %> musician_contact_url=<%= send_message_musician_url(musician) %>>Contact</button></td>
+			  </tr>
+			<% end %>
+			  </tbody>
+			</table>
+
+			<div id="dialog-contact">
+				<form id="contact_form">
+				<fieldset>
+					<label id="contact"></label>
+					<label for="name">Nom</label>
+					<input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all" />
+					<label for="email">Email</label>
+					<input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all" />
+					<label for="phone">Téléphone</label>
+					<input type="text" name="phone" id="phone" value="" class="text ui-widget-content ui-corner-all" />
+					<label for="message">Message</label>
+					<textarea rows=7  cols=70 name="message" id="message" value="" class="text ui-widget-content ui-corner-all" />		
+				</fieldset>
+				</form>
+			</div>
+
+			<br/>
+			
+        </div>
+        <div class="onglet" id="new-musician">
+        	<h3>Inscription</h3>
+
+			<%= render 'musicians/form' %>
+			
+        </div>
     </div>
 
     <div id="publicite">
