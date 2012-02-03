@@ -10,7 +10,7 @@
 //= require jquery.tablesorter.min.js
 //= require_tree .
 
-$.ajaxSetup({
+/**$.ajaxSetup({
     beforeSend:function(){
    		$('body').css('cursor', 'wait');
  	},
@@ -18,6 +18,7 @@ $.ajaxSetup({
         $('body').css('cursor', 'auto');
     }
 });
+*/
 
 $(document).ready(function(){
 	$(".inscription_button").button();
