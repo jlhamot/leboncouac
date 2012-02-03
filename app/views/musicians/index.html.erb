@@ -48,6 +48,7 @@
 			    <th class="bordered">Département</th>
 			    <th class="bordered">Ville</th>
 				<th></th>
+				<th></th>
 			  </tr>
 			  </thead> 
 
@@ -60,7 +61,10 @@
 			    <td class="bordered"><%= musician.style %></td>
 			    <td class="bordered"><%= musician.department %></td>
 			    <td class="bordered"><%= musician.city %></td>
-				<td><button class="contact_musician" musician_contact_name=<%= musician.name %> musician_contact_url=<%= send_message_musician_url(musician) %>>Contact</button></td>
+			
+				<td><button class="detail_musician" musician_detail_name="<%=h musician.name %>" musician_detail_detail="<%=h musician.comment %>">+</button></td>
+				<td><button class="contact_musician" musician_contact_name="<%=h musician.name %>" musician_contact_url="<%= send_message_musician_url(musician) %>">Contact</button></td>
+				
 			  </tr>
 			<% end %>
 			  </tbody>
@@ -93,4 +97,7 @@
   </form>
 </div>
 
+<div id="dialog-detail">
+		<label id="dialog-detail-label">Informations complémentaires</label>
+</div>
 

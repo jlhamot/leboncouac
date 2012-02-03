@@ -11,7 +11,6 @@ $(document).ready(function() {
         }
     );
 
-	
 		var musician_contact_url;
 		
 		$("#dialog-contact").dialog({
@@ -46,6 +45,19 @@ $(document).ready(function() {
 			}
 		});
 
+			$("#dialog-detail").dialog({
+				autoOpen: false,
+				height: 500,
+				width: 500,
+				modal: true,
+				title: "Informations complémentaires",
+				buttons: {
+					"OK": function() {
+						$(this).dialog("close");
+					}
+				}
+			});
+
 		$(".contact_musician")
 			.button()
 			.click(function() {
@@ -53,7 +65,18 @@ $(document).ready(function() {
 				$("#ui-dialog-title-dialog-contact").html("Contacter " + $(this).attr("musician_contact_name"));
 				$("#dialog-contact").dialog("open");
 		});
-		
+
 		$("#dialog-confirm").hide();
+		
+		$(".detail_musician")
+			.button()
+			.click(function() {
+				$("#ui-dialog-title-dialog-detail").html("Informations complémentaires de " + $(this).attr("musician_detail_name"));
+				$("#dialog-detail-label").html($(this).attr("musician_detail_detail"));
+				$("#dialog-detail").dialog("open");
+		});
+		
+		$("#dialog-detail").hide();
+		
 
 });

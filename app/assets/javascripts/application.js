@@ -27,7 +27,10 @@ $(document).ready(function(){
        headers: { 
            6: { 
                sorter: false 
-           } 
+           },
+		7: { 
+               sorter: false 
+           }
         },
 		sortList: [[4,0], [5,0]]
 	}); 	
